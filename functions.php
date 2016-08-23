@@ -480,32 +480,6 @@ add_filter( 'wp_link_pages_args', 'structure_lite_wp_link_pages_args_prevnext_ad
 
 /*
 -------------------------------------------------------------------------------------------------------
-	Remove First Gallery
--------------------------------------------------------------------------------------------------------
-*/
-
-/**
- * Removes first gallery shortcode from slideshow page template.
- *
- * @param array $content Content output on slideshow page template.
- * @return array
- */
-
-if ( ! function_exists( 'structure_lite_remove_gallery' ) ) :
-
-	function structure_lite_remove_gallery( $content ) {
-		if ( is_page_template( 'template-slideshow.php' ) ) {
-			$regex = get_shortcode_regex( array( 'gallery' ) );
-			$content = preg_replace( '/'. $regex .'/s', '', $content, 1 );
-			$content = wp_kses_post( $content );
-		}
-		return $content;
-	}
-endif;
-add_filter( 'the_content', 'structure_lite_remove_gallery' );
-
-/*
--------------------------------------------------------------------------------------------------------
 	Count Widgets
 -------------------------------------------------------------------------------------------------------
 */
@@ -563,12 +537,6 @@ if ( ! function_exists( 'structure_lite_body_class' ) ) :
 
 		if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 			$classes[] = 'structure-has-logo'; }
-
-		if ( is_page_template( 'template-landing.php' ) ) {
-			$classes[] = 'structure-landing-page'; }
-
-		if ( is_page_template( 'template-slideshow.php' ) ) {
-			$classes[] = 'structure-slideshow'; }
 
 		if ( 'left' == get_theme_mod( 'structure_lite_logo_align', 'left' ) ) {
 			$classes[] = 'structure-logo-left'; }
