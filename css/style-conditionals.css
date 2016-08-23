@@ -1,0 +1,54 @@
+/************************************************
+	Conditionals
+************************************************/
+
+/* Body Class */
+
+.structure-header-active #custom-header {
+	top: -4px;
+	border-top: 4px solid #000000;
+	border-bottom: 4px solid #000000;
+}
+.structure-header-inactive.structure-desc-inactive #custom-header {
+	min-height: 0;
+}
+.structure-header-active.structure-desc-active .site-description {
+	color: #ffffff;
+	font-weight: 500;
+}
+.structure-header-inactive.structure-desc-active #masthead .site-description {
+	padding: 24px 0px;
+	border-bottom: 4px solid #000000;
+}
+.structure-logo-left .site-title,
+.structure-logo-left .custom-logo-link {
+	text-align: left;
+}
+.structure-logo-center #nav-bar {
+	text-align: center;
+}
+.structure-logo-center .site-title,
+.structure-logo-center .custom-logo-link {
+	text-align: center;
+	margin: 0px auto 0px;
+}
+.structure-logo-center #navigation .menu {
+	display: inline-block;
+	text-align: center;
+}
+.structure-logo-right .site-title,
+.structure-logo-right .custom-logo-link {
+	text-align: right;
+}
+.structure-logo-right #navigation .menu {
+	float: right;
+}
+.structure-desc-left #masthead .site-description {
+	text-align: left;
+}
+.structure-desc-right #masthead .site-description {
+	text-align: right;
+}
+.structure-desc-inactive #masthead {
+	display: none;
+}
