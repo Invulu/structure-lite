@@ -52,15 +52,7 @@
 
 					<p><?php esc_html_e( 'Copyright', 'structure-lite' ); ?> &copy; <?php echo date( esc_html__( 'Y', 'structure-lite' ) ); ?> &middot; <?php esc_html_e( 'All Rights Reserved', 'structure-lite' ); ?> &middot; <?php bloginfo( 'name' ); ?></p>
 
-					<?php if ( '' != get_theme_mod( 'structure_lite_footer_text' ) ) { ?>
-
-						<p><span class="footer-site-info"><?php echo get_theme_mod( 'structure_lite_footer_text' ); ?></span> &middot; <a href="<?php bloginfo( 'rss2_url' ); ?>"><?php esc_html_e( 'RSS Feed', 'structure-lite' ); ?></a> &middot; <?php wp_loginout(); ?></p>
-
-					<?php } else { ?>
-
-						<p><?php printf( esc_html__( '%1$s by %2$s', 'structure-lite' ), 'Structure', '<a href="http://organicthemes.com/">Organic Themes</a>' ); ?> &middot; <a href="<?php bloginfo( 'rss2_url' ); ?>"><?php esc_html_e( 'RSS Feed', 'structure-lite' ); ?></a> &middot; <?php wp_loginout(); ?></p>
-
-					<?php } ?>
+					<p><?php printf( esc_html__( 'Theme: %1$s by %2$s', 'structure-lite' ), 'Structure Lite', '<a href="http://organicthemes.com/" rel="designer">Organic Themes</a>' ); ?> &middot; <a href="<?php bloginfo( 'rss2_url' ); ?>"><?php esc_html_e( 'RSS Feed', 'structure-lite' ); ?></a> &middot; <?php wp_loginout(); ?></p>
 
 				</div>
 
