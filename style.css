@@ -380,7 +380,7 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
-	max-height: 520px;
+	max-height: 480px;
 	line-height: 0;
 }
 #masthead {

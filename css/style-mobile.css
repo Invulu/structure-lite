@@ -189,6 +189,15 @@
 		color: rgba(0, 0, 0, 1);
 		text-decoration: none;
 	}
+	.post-area,
+	.post-area.middle,
+	.post-area.right,
+	.post-area.full-width,
+	.post-area.no-sidebar,
+	.post-area.two-column,
+	.post-area.three-column {
+		padding: 24px 0px;
+	}
 	.article h1:first-child + p,
 	.article > p:first-child,
 	.article span + p {
@@ -264,20 +273,11 @@
 
 	/* Theme Phone */
 
+	.site-title {
+		letter-spacing: -2px;
+	}
 	#custom-header {
 		background-size: cover;
-	}
-	.content {
-		padding: 0px 4%;
-	}
-	.post-area,
-	.post-area.middle,
-	.post-area.right,
-	.post-area.full-width,
-	.post-area.no-sidebar,
-	.post-area.two-column,
-	.post-area.three-column {
-		padding: 24px 0px;
 	}
 	.blog-holder,
 	.archive-holder {
