@@ -4,11 +4,6 @@
 
 /* Body Class */
 
-.structure-header-active #custom-header {
-	top: -4px;
-	border-top: 4px solid #000000;
-	border-bottom: 4px solid #000000;
-}
 .structure-header-inactive.structure-desc-inactive #custom-header {
 	min-height: 0;
 }
