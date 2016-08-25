@@ -12,6 +12,9 @@
 .structure-header-inactive.structure-desc-inactive #custom-header {
 	min-height: 0;
 }
+.structure-header-inactive.structure-desc-inactive #header-title {
+	border: none;
+}
 .structure-header-active.structure-desc-active .site-description {
 	color: #ffffff;
 	font-weight: 500;
