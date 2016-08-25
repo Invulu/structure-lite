@@ -67,7 +67,7 @@ get_header(); ?>
 				<div class="columns twelve">
 
 					<!-- BEGIN .post-area -->
-					<div class="post-area middle">
+					<div class="post-area right">
 
 						<?php get_template_part( 'content/loop', 'blog' ); ?>
 

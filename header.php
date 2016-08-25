@@ -33,14 +33,14 @@
 	<!-- BEGIN #header -->
 	<div id="header">
 
-		<!-- BEGIN .row -->
-		<div class="row">
+		<!-- BEGIN #nav-bar -->
+		<section id="nav-bar">
 
-			<!-- BEGIN .content -->
-			<div class="content">
+			<!-- BEGIN .row -->
+			<div class="row">
 
-				<!-- BEGIN #nav-bar -->
-				<section id="nav-bar">
+				<!-- BEGIN .content -->
+				<div class="content">
 
 					<!-- BEGIN .mobile-nav-holder -->
 					<div class="mobile-nav-holder">
@@ -104,14 +104,14 @@
 
 					<?php } ?>
 
-				<!-- END #nav-bar -->
-				</section>
+				<!-- END .content -->
+				</div>
 
-			<!-- END .content -->
+			<!-- END .row -->
 			</div>
 
-		<!-- END .row -->
-		</div>
+		<!-- END #nav-bar -->
+		</section>
 
 		<?php if ( is_home() || is_archive() || is_search() || is_attachment() ) { ?>
 

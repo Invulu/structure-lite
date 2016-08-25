@@ -1,4 +1,4 @@
-Structure Lite v1.0
+Structure Lite v1.0.1
 http://organicthemes.com
 
 Image Credits
@@ -22,3 +22,7 @@ INSTALL:
 
 CHANGELOG v1.0:
 - Initial build
+
+CHANGELOG v1.0.1:
+- Border design tweaks
+- Blog class fix
