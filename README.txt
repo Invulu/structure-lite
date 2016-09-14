@@ -1,4 +1,4 @@
-Structure Lite v1.0.1
+Structure Lite v1.0.2
 http://organicthemes.com
 
 Image Credits
@@ -26,3 +26,6 @@ CHANGELOG v1.0:
 CHANGELOG v1.0.1:
 - Border design tweaks
 - Blog class fix
+
+CHANGELOG v1.0.2:
+- Footer change plugin notice
