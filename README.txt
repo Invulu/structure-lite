@@ -1,4 +1,4 @@
-Structure Lite v1.0.2
+Structure Lite v1.0.3
 http://organicthemes.com
 
 Image Credits
@@ -29,3 +29,6 @@ CHANGELOG v1.0.1:
 
 CHANGELOG v1.0.2:
 - Footer change plugin notice
+
+CHANGELOG v1.0.3:
+- Admin notice update
