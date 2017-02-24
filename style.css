@@ -1,13 +1,13 @@
 /*******************************************************************************************************************
 
 	Theme Name: Structure Lite
-	Theme URI: http://www.organicthemes.com/theme/structure-lite/
+	Theme URI: http://organicthemes.com/theme/structure-lite/
 	Description: The original minimal WordPress theme. Structure Lite features a responsive framework, WordPress customizer options and the latest core features. Structure Lite is the free version of the Structure Theme from Organic Themes.
 	Author: Organic Themes
 	Author URI: http://organicthemes.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.0.3
+	Version: 1.0.4
 	Text Domain: structure-lite
 	Domain Path: /languages/
 	Tags: one-column, two-columns, three-columns, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-images, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
@@ -55,10 +55,10 @@ body {
 	background-color: #ffffff;
 	color: #333333;
 	color: rgba(0, 0, 0, 0.8);
-	font-size: 1em;
+	font-size: 1.1em;
 	font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
 	font-weight: 300;
-	line-height: 1.65;
+	line-height: 1.8;
 	margin: 0px;
 	padding: 0px;
 }
@@ -757,9 +757,9 @@ div.menu ul li li.sfHover ul {
 .article > p:first-child,
 .article span + p {
 	color: #000000;
-	font-size: 1.8em;
+	font-size: 1.4em;
 	font-weight: 400;
-	line-height: 1.3;
+	line-height: 1.5;
 }
 .article > p:first-child,
 .article span + p {
@@ -1488,7 +1488,6 @@ img.alignleft {
 .footer-information {
 	padding: 24px 0px;
 	overflow: hidden;
-	border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 .footer-information p {
 	margin: 0px;
@@ -1812,6 +1811,9 @@ form span label {
 form input,
 form textarea {
 	box-sizing: border-box;
+	font-family: inherit;
+	font-size: 1em;
+	line-height: 1.6;
 	padding: 6px 8px;
 	border-radius: 3px;
 	border: 1px solid rgba(0, 0, 0, 0.24);
@@ -1833,9 +1835,6 @@ form input[type='password'],
 form input[type='number'],
 form textarea {
 	display: block;
-	font-family: inherit;
-	font-size: 1em;
-	line-height: 1.4;
 }
 form input[type='url'],
 form input[type='tel'],
@@ -1873,9 +1872,10 @@ select {
 	width: auto;
 	max-width: 100%;
 	font-size: 1.2em;
-	line-height: 2;
+	line-height: 1.6;
 	margin-bottom: 6px;
-	padding: 6px 44px 6px 8px;
+	padding: 6px 44px 6px 8px !important;
+	box-sizing: border-box;
 	box-shadow: none;
 	border-radius: 3px;
 	border: 1px solid rgba(0, 0, 0, 0.24);
@@ -1889,8 +1889,8 @@ select {
 		linear-gradient(135deg, gray 50%, transparent 50%),
 		linear-gradient(to right, rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.24));
 	background-position:
-		calc(100% - 18px) calc(16px + 2px),
-		calc(100% - 13px) calc(16px + 2px),
+		calc(100% - 16px) 50%,
+		calc(100% - 11px) 50%,
 		calc(100% - 32px) 6px;
 	background-size:
 		5px 5px,

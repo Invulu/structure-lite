@@ -74,6 +74,7 @@ if ( ! function_exists( 'structure_lite_setup' ) ) :
 		$defaults = array(
 			'width'								=> 1800,
 			'height'							=> 480,
+			'default-image'					=> get_template_directory_uri() . '/images/default-header.jpg',
 			'flex-height'					=> true,
 			'flex-width'					=> true,
 			'default-text-color'	=> '000000',
@@ -135,16 +136,18 @@ add_action( 'wp_enqueue_scripts', 'structure_lite_enqueue_scripts' );
 */
 
 /** Function structure_lite_admin_notice */
-function structure_lite_admin_notice() {
-	global $current_user ;
-	$user_id = $current_user->ID;
-	if ( ! get_user_meta( $user_id, 'structure_lite_ignore_notice' ) ) {
-		echo '<div class="notice updated is-dismissible"><p>';
-		printf( __( 'Enjoying the Structure Lite theme? Visit <a href="%1$s" target="_blank">Organic Themes</a> for more themes, plugins and support. <a class="notice-dismiss" type="button" href="%2$s"><span class="screen-reader-text">Hide Notice</span></a>', 'structure-lite' ), 'http://organicthemes.com/', '?structure_lite_nag_ignore=0' );
-		echo '</p></div>';
+if ( ! class_exists( 'Organic_Footer_Modifier' ) ) {
+	function structure_lite_admin_footer_notice() {
+		global $current_user;
+		$user_id = $current_user->ID;
+		if ( ! get_user_meta( $user_id, 'structure_lite_ignore_notice' ) ) {
+			echo '<div class="notice updated is-dismissible"><p>';
+			printf( __( 'Want to remove or change those pesky footer credits? Get the <a href="%1$s" target="_blank">Footer Change Plugin</a> from Organic Themes! Use discount code <b>FOOTERSAVE10</b> to save $10! <a class="notice-dismiss" type="button" href="%2$s"><span class="screen-reader-text">Hide Notice</span></a>', 'structure-lite' ), 'http://organicthemes.com/footer-change-plugin/', '?structure_lite_nag_ignore=0' );
+			echo '</p></div>';
+		}
 	}
+	add_action( 'admin_notices', 'structure_lite_admin_footer_notice' );
 }
-add_action( 'admin_notices', 'structure_lite_admin_notice' );
 
 /** Function structure_lite_nag_ignore */
 function structure_lite_nag_ignore() {
@@ -155,15 +158,6 @@ function structure_lite_nag_ignore() {
 	}
 }
 add_action( 'admin_init', 'structure_lite_nag_ignore' );
-
-if ( ! class_exists( 'Organic_Footer_Modifier' ) ) {
-	function structure_lite_admin_footer_notice() {
-		echo '<div class="updated"><p>';
-		printf( __( 'Want to remove or change those pesky footer credits? Get the <a href="%1$s" target="_blank">Footer Change Plugin</a> from Organic Themes! Use discount code <b>FOOTERSAVE10</b> to save $10!', 'structure-lite' ), 'http://organicthemes.com/footer-change-plugin/' );
-		echo '</p></div>';
-	}
-	add_action( 'admin_notices', 'structure_lite_admin_footer_notice' );
-}
 
 /*
 -------------------------------------------------------------------------------------------------------
@@ -355,7 +349,6 @@ if ( ! function_exists( 'structure_lite_comment' ) ) :
 	 * @param array $depth Level of replies.
 	 */
 	function structure_lite_comment( $comment, $args, $depth ) {
-		$GLOBALS['comment'] = $comment;
 		switch ( $comment->comment_type ) :
 			case 'pingback' :
 			case 'trackback' :
@@ -380,8 +373,8 @@ if ( ! function_exists( 'structure_lite_comment' ) ) :
 
 						/* translators: 1: comment author, 2: date and time */
 						printf( __( '%1$s <br/> %2$s <br/>', 'structure-lite' ),
-							sprintf( '<span class="fn">%s</span>', wp_kses_post( get_comment_author_link() ) ),
-							sprintf( '<a href="%1$s"><time pubdate datetime="%2$s">%3$s</time></a>',
+							sprintf( __( '<span class="fn">%s</span>', 'structure-lite' ), wp_kses_post( get_comment_author_link() ) ),
+							sprintf( __( '<a href="%1$s"><time pubdate datetime="%2$s">%3$s</time></a>', 'structure-lite' ),
 								esc_url( get_comment_link( $comment->comment_ID ) ),
 								get_comment_time( 'c' ),
 								/* translators: 1: date, 2: time */
@@ -500,7 +493,6 @@ add_filter( 'wp_link_pages_args', 'structure_lite_wp_link_pages_args_prevnext_ad
 function structure_lite_count_widgets( $sidebar_id ) {
 	// If loading from front page, consult $_wp_sidebars_widgets rather than options
 	// to see if wp_convert_widget_settings() has made manipulations in memory.
-	global $_wp_sidebars_widgets;
 	if ( empty( $_wp_sidebars_widgets ) ) :
 		$_wp_sidebars_widgets = get_option( 'sidebars_widgets', array() );
 	endif;
@@ -589,6 +581,10 @@ if ( ! function_exists( 'structure_lite_body_class' ) ) :
 
 		if ( is_active_sidebar( 'sidebar-1' ) ) {
 			$classes[] = 'structure-sidebar-1';
+		}
+
+		if ( is_active_sidebar( 'footer' ) ) {
+			$classes[] = 'structure-footer-active';
 		}
 
 		if ( '' != get_theme_mod( 'background_image' ) ) {

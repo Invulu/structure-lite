@@ -34,8 +34,13 @@
 	<?php if ( have_comments() ) : ?>
 		<h3 id="comments-title">
 			<?php
-				printf( _n( 'One Comment on &ldquo;%2$s&rdquo;', '%1$s Comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'structure-lite' ),
-				number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+				$count = get_comments_number();
+				$title = get_the_title();
+				if ( 1 === $count ) {
+					printf( esc_html__( 'One Comment on &ldquo;%1$s&rdquo;', 'structure-lite' ), $title );
+				} else {
+					printf( esc_html__( '%1$s Comments on &ldquo;%2$s&rdquo;', 'structure-lite' ), $count, $title );
+				}
 			?>
 		</h3>
 

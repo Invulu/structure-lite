@@ -1,10 +1,10 @@
-Structure Lite v1.0.3
+Structure Lite v1.0.4
 http://organicthemes.com
 
 Image Credits
 
 - screenshot.png: Created by David Morgan, http://dav.idmorgan.com. Licensed under the GPLv2 license.
-- default-header.jpg: Downloaded from Unsplash, https://unsplash.com. Licensed under Creative Commons Zero license, https://unsplash.com/license.
+- default-header.jpg: Downloaded from Unsplash, https://unsplash.com/search/architecture?photo=2aoVQXwLf3g. Licensed under Creative Commons Zero license, https://unsplash.com/license.
 
 Font Awesome
 
@@ -32,3 +32,11 @@ CHANGELOG v1.0.2:
 
 CHANGELOG v1.0.3:
 - Admin notice update
+
+CHANGELOG v1.0.4:
+- WP.org review prep
+- Fixed logo right align bug
+- Mobile style fixes
+- Default header image fix
+- Fixed error in comments.php
+- Fixed 3 errors in functions.php
