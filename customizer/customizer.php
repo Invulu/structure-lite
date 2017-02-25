@@ -103,23 +103,6 @@ function structure_lite_theme_customizer( $wp_customize ) {
 				'priority' => 45,
 		) ) );
 
-		// Site Description Align.
-		$wp_customize->add_setting( 'structure_lite_desc_align', array(
-			'default'						=> 'center',
-			'sanitize_callback'	=> 'structure_lite_sanitize_align',
-		) );
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'structure_lite_desc_align', array(
-			'type' 		=> 'radio',
-			'label' 	=> esc_html__( 'Site Description Alignment', 'structure-lite' ),
-			'section' => 'title_tagline',
-			'choices' => array(
-				'left' 		=> esc_html__( 'Left Align', 'structure-lite' ),
-				'center' 	=> esc_html__( 'Center Align', 'structure-lite' ),
-				'right' 	=> esc_html__( 'Right Align', 'structure-lite' ),
-			),
-			'priority' => 50,
-		) ) );
-
 		/*
 		-------------------------------------------------------------------------------------------------------
 			Theme Options Panel

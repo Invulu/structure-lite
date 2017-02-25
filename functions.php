@@ -548,15 +548,6 @@ if ( ! function_exists( 'structure_lite_body_class' ) ) :
 		if ( 'right' == get_theme_mod( 'structure_lite_logo_align', 'left' ) ) {
 			$classes[] = 'structure-logo-right'; }
 
-		if ( 'left' == get_theme_mod( 'structure_lite_desc_align', 'center' ) ) {
-			$classes[] = 'structure-desc-left'; }
-
-		if ( 'center' == get_theme_mod( 'structure_lite_desc_align', 'center' ) ) {
-			$classes[] = 'structure-desc-center'; }
-
-		if ( 'right' == get_theme_mod( 'structure_lite_desc_align', 'center' ) ) {
-			$classes[] = 'structure-desc-right'; }
-
 		if ( 'blank' != get_theme_mod( 'header_textcolor' ) ) {
 			$classes[] = 'structure-desc-active'; }
 

@@ -1,4 +1,4 @@
-Structure Lite v1.0.4
+Structure Lite v1.0.5
 http://organicthemes.com
 
 Image Credits
@@ -40,3 +40,6 @@ CHANGELOG v1.0.4:
 - Default header image fix
 - Fixed error in comments.php
 - Fixed 3 errors in functions.php
+
+CHANGELOG v1.0.5:
+- Removed site description alignment option

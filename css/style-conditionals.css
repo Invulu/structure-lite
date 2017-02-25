@@ -42,12 +42,6 @@
 .structure-logo-right #navigation .menu {
 	float: right;
 }
-.structure-desc-left #masthead .site-description {
-	text-align: left;
-}
-.structure-desc-right #masthead .site-description {
-	text-align: right;
-}
 .structure-desc-inactive #masthead {
 	display: none;
 }
