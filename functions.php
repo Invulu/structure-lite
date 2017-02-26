@@ -77,7 +77,7 @@ if ( ! function_exists( 'structure_lite_setup' ) ) :
 			'default-image'					=> get_template_directory_uri() . '/images/default-header.jpg',
 			'flex-height'					=> true,
 			'flex-width'					=> true,
-			'default-text-color'	=> '000000',
+			'default-text-color'	=> 'ffffff',
 			'header-text'					=> true,
 			'uploads'							=> true,
 		);
@@ -113,13 +113,13 @@ if ( ! function_exists( 'structure_lite_enqueue_scripts' ) ) {
 		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array( 'structure-lite-style' ), '4.0' );
 
 		// Resgister Scripts.
-		wp_register_script( 'fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '4.0' );
+		wp_register_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '4.0' );
 		wp_register_script( 'superfish', get_template_directory_uri() . '/js/superfish.js', array( 'jquery', 'hoverIntent' ), '4.0' );
 
 		// Enqueue Scripts.
 		wp_enqueue_script( 'hoverIntent' );
 		wp_enqueue_script( 'structure-lite-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '4.0', true );
-		wp_enqueue_script( 'structure-lite-custom', get_template_directory_uri() . '/js/jquery.custom.js', array( 'jquery', 'superfish', 'fitvids' ), '4.0', true );
+		wp_enqueue_script( 'structure-lite-custom', get_template_directory_uri() . '/js/jquery.custom.js', array( 'jquery', 'superfish', 'jquery-fitvids' ), '4.0', true );
 
 		// Load single scripts only on single pages.
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -129,35 +129,35 @@ if ( ! function_exists( 'structure_lite_enqueue_scripts' ) ) {
 }
 add_action( 'wp_enqueue_scripts', 'structure_lite_enqueue_scripts' );
 
-/*
--------------------------------------------------------------------------------------------------------
-	Admin Notice
--------------------------------------------------------------------------------------------------------
-*/
+if ( ! function_exists( 'structure_lite_custom_styles' ) ) {
 
-/** Function structure_lite_admin_notice */
-if ( ! class_exists( 'Organic_Footer_Modifier' ) ) {
-	function structure_lite_admin_footer_notice() {
-		global $current_user;
-		$user_id = $current_user->ID;
-		if ( ! get_user_meta( $user_id, 'structure_lite_ignore_notice' ) ) {
-			echo '<div class="notice updated is-dismissible"><p>';
-			printf( __( 'Want to remove or change those pesky footer credits? Get the <a href="%1$s" target="_blank">Footer Change Plugin</a> from Organic Themes! Use discount code <b>FOOTERSAVE10</b> to save $10! <a class="notice-dismiss" type="button" href="%2$s"><span class="screen-reader-text">Hide Notice</span></a>', 'structure-lite' ), 'http://organicthemes.com/footer-change-plugin/', '?structure_lite_nag_ignore=0' );
-			echo '</p></div>';
+	/** Function structure_lite_custom_styles */
+	function structure_lite_custom_styles() {
+
+		$desc_color = '';
+		$bg_color = '';
+
+		// Text color.
+		if ( '' != get_header_textcolor() ) {
+			$desc_color .= 'color: #' . get_header_textcolor() . ';';
 		}
-	}
-	add_action( 'admin_notices', 'structure_lite_admin_footer_notice' );
-}
+		if ( '' != $desc_color ) {
+			$desc_color = '.site-description {' . $desc_color . '}';
+			wp_add_inline_style( 'structure-lite-style', $desc_color );
+		}
 
-/** Function structure_lite_nag_ignore */
-function structure_lite_nag_ignore() {
-	global $current_user;
-	$user_id = $current_user->ID;
-	if ( isset( $_GET['structure_lite_nag_ignore'] ) && '0' == $_GET['structure_lite_nag_ignore'] ) {
-		 add_user_meta( $user_id, 'structure_lite_ignore_notice', 'true', true );
+		// Background color.
+		if ( '' != get_theme_mod( 'background_color' ) ) {
+			$bg_color .= 'background-color: #' . get_theme_mod( 'background_color' ) . ';';
+		}
+		if ( '' != $bg_color ) {
+			$bg_color = '.menu ul.sub-menu, .menu ul.children, .landing-page .content {' . $bg_color . '}';
+			wp_add_inline_style( 'structure-lite-style', $bg_color );
+		}
+
 	}
 }
-add_action( 'admin_init', 'structure_lite_nag_ignore' );
+add_action( 'wp_enqueue_scripts', 'structure_lite_custom_styles' );
 
 /*
 -------------------------------------------------------------------------------------------------------
@@ -266,23 +266,6 @@ if ( ! function_exists( 'structure_lite_widgets_init' ) ) :
 	}
 endif;
 add_action( 'widgets_init', 'structure_lite_widgets_init' );
-
-/*
--------------------------------------------------------------------------------------------------------
-	Add Stylesheet To Visual Editor
--------------------------------------------------------------------------------------------------------
-*/
-
-add_action( 'widgets_init', 'structure_lite_add_editor_styles' );
-/**
- * Apply theme's stylesheet to the visual editor.
- *
- * @uses add_editor_style() Links a stylesheet to visual editor
- * @uses get_stylesheet_uri() Returns URI of theme stylesheet
- */
-function structure_lite_add_editor_styles() {
-	add_editor_style( 'style.css' );
-}
 
 /*
 -------------------------------------------------------------------------------------------------------
@@ -479,42 +462,6 @@ if ( ! function_exists( 'structure_lite_wp_link_pages_args_prevnext_add' ) ) :
 	}
 endif;
 add_filter( 'wp_link_pages_args', 'structure_lite_wp_link_pages_args_prevnext_add' );
-
-/*
--------------------------------------------------------------------------------------------------------
-	Count Widgets
--------------------------------------------------------------------------------------------------------
-*/
-
-/**
- * Count number of widgets in a sidebar
- * Used to add classes to widget areas so widgets can be displayed one, two, three or four per row
- */
-function structure_lite_count_widgets( $sidebar_id ) {
-	// If loading from front page, consult $_wp_sidebars_widgets rather than options
-	// to see if wp_convert_widget_settings() has made manipulations in memory.
-	if ( empty( $_wp_sidebars_widgets ) ) :
-		$_wp_sidebars_widgets = get_option( 'sidebars_widgets', array() );
-	endif;
-
-	$sidebars_widgets_count = $_wp_sidebars_widgets;
-
-	if ( isset( $sidebars_widgets_count[ $sidebar_id ] ) ) :
-		$widget_count = count( $sidebars_widgets_count[ $sidebar_id ] );
-		$widget_classes = 'widget-count-' . count( $sidebars_widgets_count[ $sidebar_id ] );
-		if ( 0 === $widget_count % 4 || $widget_count > 6 ) :
-			// Four widgets er row if there are exactly four or more than six.
-			$widget_classes .= ' per-row-4';
-		elseif ( $widget_count >= 3 ) :
-			// Three widgets per row if there's three or more widgets.
-			$widget_classes .= ' per-row-3';
-		elseif ( 2 === $widget_count ) :
-			// Otherwise show two widgets per row.
-			$widget_classes .= ' per-row-2';
-		endif;
-		return $widget_classes;
-	endif;
-}
 
 /*
 -------------------------------------------------------------------------------------------------------

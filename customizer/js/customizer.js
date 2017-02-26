@@ -17,17 +17,18 @@
 	} );
 
 	/**
-	 * Real-time preview of the site title color
+	 * Real-time preview of the site description color.
 	 */
 	wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {
 			if ( 'blank' == to ) {
-				$( '#masthead' ).css( {
+				$( '.site-description' ).css( {
 					'clip': 'rect(1px, 1px, 1px, 1px)',
 					'position': 'absolute'
 				} );
 			} else {
-				$( '#masthead' ).css( {
+				$( '.site-description' ).css( {
+					'color': to,
 					'clip': 'auto',
 					'position': 'relative'
 				} );

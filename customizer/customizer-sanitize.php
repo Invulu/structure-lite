@@ -81,17 +81,3 @@ function structure_lite_sanitize_checkbox( $input ) {
 function structure_lite_sanitize_text( $input ) {
 	 return wp_kses_post( force_balance_tags( $input ) );
 }
-
-/**
- * Sanitize Colors.
- *
- * @param array $input Sanitizes user input.
- * @return array
- */
-function structure_lite_sanitize_color( $input ) {
-	if ( preg_match( '/^#[a-f0-9]{6}$/i', $input ) ) {
-		return $input;
-	} else {
-		return '';
-	}
-}

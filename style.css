@@ -411,7 +411,7 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 .site-title {
 	display: block;
 	font-family: 'Archivo Narrow';
-	font-size: 5.6em;
+	font-size: 4.6em;
 	font-weight: 700;
 	line-height: 1.1;
 	text-transform: uppercase;
@@ -433,7 +433,7 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 }
 .site-description {
 	display: block;
-	color: #000000;
+	color: #ffffff;
 	font-family: 'Roboto';
 	font-size: 3em;
 	font-weight: 300;
@@ -1459,20 +1459,16 @@ img.alignleft {
 	padding: 0px;
 	border-bottom: none;
 }
-.footer-widgets.widget-count-1 .widget,
-.footer-widgets.widget-count-1 .widget:last-child {
-	float: none;
-	display: inline-block;
-	width: auto;
-	margin-left: auto;
-	margin-right: auto;
+.footer-widgets .widget:first-child:nth-last-child(1),
+.footer-widgets .widget:first-child:nth-last-child(1) ~ .widget {
+	width: 100%;
 }
-.footer-widgets.widget-count-2 .widget,
-.footer-widgets.widget-count-2 .widget:last-child {
+.footer-widgets .widget:first-child:nth-last-child(2),
+.footer-widgets .widget:first-child:nth-last-child(2) ~ .widget {
 	width: 50%;
 }
-.footer-widgets.widget-count-3 .widget,
-.footer-widgets.widget-count-3 .widget:last-child {
+.footer-widgets .widget:first-child:nth-last-child(3),
+.footer-widgets .widget:first-child:nth-last-child(3) ~ .widget {
 	width: 33.3%;
 }
 .footer-widgets .widget:nth-child(4n+1) {

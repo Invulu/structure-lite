@@ -17,9 +17,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="pingback" href="<?php echo bloginfo( 'pingback_url' ); ?>">
-
-	<?php get_template_part( 'style', 'options' ); ?>
 
 	<?php wp_head(); ?>
 
@@ -127,7 +124,7 @@
 
 						<div id="masthead" class="vertical-center">
 							<p class="site-description">
-								<?php echo html_entity_decode( get_bloginfo( 'description' ) ); ?>
+								<?php echo html_entity_decode( esc_html( get_bloginfo( 'description' ) ) ); ?>
 							</p>
 						</div>
 
@@ -144,7 +141,7 @@
 
 							<div id="masthead">
 								<p class="site-description">
-									<?php echo html_entity_decode( get_bloginfo( 'description' ) ); ?>
+									<?php echo html_entity_decode( esc_html( get_bloginfo( 'description' ) ) ); ?>
 								</p>
 							</div>
 

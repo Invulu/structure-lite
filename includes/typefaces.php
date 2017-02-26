@@ -73,7 +73,7 @@ function structure_lite_fonts_url() {
 		$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
 	}
 
-	return $fonts_url;
+	return esc_url_raw( $fonts_url );
 }
 
 /**
@@ -85,16 +85,6 @@ function structure_lite_scripts_styles() {
 	wp_enqueue_style( 'structure-fonts', structure_lite_fonts_url(), array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'structure_lite_scripts_styles' );
-
-/**
- * Enqueue Google Fonts on Custom Header Page
- *
- * @since Structure Lite 1.0
- */
-function structure_lite_custom_header_fonts() {
-	wp_enqueue_style( 'structure-fonts', structure_lite_fonts_url(), array(), null );
-}
-add_action( 'admin_print_styles-appearance_page_custom-header', 'structure_lite_scripts_styles' );
 
 /**
  * Add Google Scripts for use with the editor

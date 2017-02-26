@@ -10,9 +10,8 @@
 .structure-header-inactive.structure-desc-inactive #header-title {
 	border: none;
 }
-.structure-header-active.structure-desc-active .site-description {
-	color: #ffffff;
-	font-weight: 400;
+.structure-header-inactive.structure-desc-active .site-description {
+	color: #000000;
 }
 .structure-header-inactive.structure-desc-active #masthead .site-description {
 	padding: 24px 0px;
@@ -31,8 +30,9 @@
 	margin: 0px auto 0px;
 }
 .structure-logo-center #navigation .menu {
-	display: inline-block;
+	display: block;
 	text-align: center;
+	margin: 0px auto 0px;
 }
 .structure-logo-right .site-title,
 .structure-logo-right .site-logo,

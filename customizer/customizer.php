@@ -50,9 +50,6 @@ function structure_lite_theme_customizer( $wp_customize ) {
 	// Set site title color to be previewed in real-time.
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-	// Remove site description color control.
-	$wp_customize->remove_control( 'header_textcolor' );
-
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector' => '.site-title a',
@@ -71,11 +68,6 @@ function structure_lite_theme_customizer( $wp_customize ) {
 		Site Title Section
 	-------------------------------------------------------------------------------------------------------
 	*/
-
-	$wp_customize->add_section( 'title_tagline' , array(
-		'title'			=> esc_html__( 'Site Identity', 'structure-lite' ),
-		'priority'	=> 1,
-	) );
 
 		// Custom Display Tagline Option.
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'display_header_text', array(

@@ -24,7 +24,7 @@
 		<div class="content">
 
 			<!-- BEGIN .footer-widgets -->
-			<div class="footer-widgets <?php echo structure_lite_count_widgets( 'footer' ); ?>">
+			<div class="footer-widgets">
 
 				<?php dynamic_sidebar( 'footer' ); ?>
 
@@ -50,9 +50,9 @@
 
 				<div class="align-left">
 
-					<p><?php esc_html_e( 'Copyright', 'structure-lite' ); ?> &copy; <?php echo date( esc_html__( 'Y', 'structure-lite' ) ); ?> &middot; <?php esc_html_e( 'All Rights Reserved', 'structure-lite' ); ?> &middot; <?php bloginfo( 'name' ); ?></p>
+					<p><?php esc_html_e( 'Copyright', 'structure-lite' ); ?> &copy; <?php echo date( esc_html__( 'Y', 'structure-lite' ) ); ?> &middot; <?php esc_html_e( 'All Rights Reserved', 'structure-lite' ); ?> &middot; <?php esc_html( bloginfo( 'name' ) ); ?></p>
 
-					<p><?php printf( esc_html__( 'Theme: %1$s by %2$s', 'structure-lite' ), 'Structure Lite', '<a href="http://organicthemes.com/" rel="designer">Organic Themes</a>' ); ?> &middot; <a href="<?php bloginfo( 'rss2_url' ); ?>"><?php esc_html_e( 'RSS Feed', 'structure-lite' ); ?></a> &middot; <?php wp_loginout(); ?></p>
+					<p><?php printf( esc_html__( 'Theme: %1$s by %2$s', 'structure-lite' ), 'Structure Lite', '<a href="http://organicthemes.com/" rel="designer">Organic Themes</a>' ); ?></p>
 
 				</div>
 
