@@ -361,7 +361,7 @@ if ( ! function_exists( 'structure_lite_comment' ) ) :
 								esc_url( get_comment_link( $comment->comment_ID ) ),
 								get_comment_time( 'c' ),
 								/* translators: 1: date, 2: time */
-								sprintf( esc_html__( '%1$s', 'structure-lite' ), get_comment_date(), get_comment_time() )
+								sprintf( esc_html__( '%1$s, %2$s', 'structure-lite' ), get_comment_date(), get_comment_time() )
 							)
 						);
 						?>

@@ -1,6 +1,6 @@
 === Structure Lite ===
 
-Version: 1.0.6
+Version: 1.0.7
 Contributors: organicthemes, itsdavidmorgan
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
 License: GPLv2 or later
@@ -78,3 +78,6 @@ CHANGELOG v1.0.6:
 - Fixed handling of header_textcolor
 - Removed custom title_tagline section from customizer
 - Replaced style options with wp_add_inline_style()
+
+CHANGELOG v1.0.7:
+- Fixed translatable string in functions
