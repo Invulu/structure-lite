@@ -2,12 +2,12 @@
 
 	Theme Name: Structure Lite
 	Theme URI: http://organicthemes.com/theme/structure-lite/
-	Description: The original minimal WordPress theme. Structure Lite features a responsive framework, WordPress customizer options and the latest core features. Structure Lite is the free version of the Structure Theme from Organic Themes.
+	Description: The original minimal WordPress theme. Structure Lite features a responsive framework, WordPress customizer options and the latest core features. Structure Lite is an all purpose theme for bloggers, writers, designers, magazines, news sites and more.
 	Author: Organic Themes
 	Author URI: http://organicthemes.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.0.7
+	Version: 1.0.8
 	Text Domain: structure-lite
 	Domain Path: /languages/
 	Tags: one-column, two-columns, three-columns, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-images, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
@@ -381,6 +381,7 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 #custom-header {
 	display: block;
 	position: relative;
+	background-color: #000000;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: 100% auto;

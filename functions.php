@@ -97,6 +97,30 @@ add_action( 'after_setup_theme', 'structure_lite_setup' );
 
 /*
 -------------------------------------------------------------------------------------------------------
+	Admin Notice
+-------------------------------------------------------------------------------------------------------
+*/
+
+function structure_lite_theme_notice() {
+	global $current_user;
+	$user_id = $current_user->ID;
+	if ( ! get_user_meta( $user_id, 'structure_lite_theme_notice_ignore') ) {
+		echo '<div class="notice notice-warning" style="position: relative;"><p>'. __( 'Enjoying the <b>Structure Lite</b> theme? Consider <a href="https://organicthemes.com/theme/structure-theme/" target="_blank">upgrading</a> to the premium version for more customization options, page templates and support.', 'structure-lite' ) .' <a class="notice-dismiss" href="?structure-lite-ignore-notice" style="text-decoration: none;"></a></p></div>';
+	}
+}
+add_action( 'admin_notices', 'structure_lite_theme_notice' );
+
+function structure_lite_theme_notice_ignore() {
+	global $current_user;
+	$user_id = $current_user->ID;
+	if ( isset( $_GET['structure-lite-ignore-notice'] ) ) {
+		add_user_meta( $user_id, 'structure_lite_theme_notice_ignore', 'true', true );
+	}
+}
+add_action( 'admin_init', 'structure_lite_theme_notice_ignore' );
+
+/*
+-------------------------------------------------------------------------------------------------------
 	Register Scripts
 -------------------------------------------------------------------------------------------------------
 */
