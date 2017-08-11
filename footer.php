@@ -52,7 +52,7 @@
 
 					<p><?php esc_html_e( 'Copyright', 'structure-lite' ); ?> &copy; <?php echo date( esc_html__( 'Y', 'structure-lite' ) ); ?> &middot; <?php esc_html_e( 'All Rights Reserved', 'structure-lite' ); ?> &middot; <?php esc_html( bloginfo( 'name' ) ); ?></p>
 
-					<p><?php printf( esc_html__( 'Theme: %1$s by %2$s', 'structure-lite' ), 'Structure Lite', '<a href="http://organicthemes.com/" rel="designer">Organic Themes</a>' ); ?></p>
+					<p><?php printf( esc_html__( 'Theme: %1$s by %2$s', 'structure-lite' ), 'Structure Lite', '<a href="https://organicthemes.com/" rel="designer">Organic Themes</a>' ); ?></p>
 
 				</div>
 
