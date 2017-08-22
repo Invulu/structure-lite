@@ -80,7 +80,7 @@ function structure_lite_theme_customizer( $wp_customize ) {
 
 		// Logo Align.
 		$wp_customize->add_setting( 'structure_lite_logo_align', array(
-				'default' 					=> 'left',
+				'default' 					=> 'center',
 				'sanitize_callback'	=> 'structure_lite_sanitize_align',
 		) );
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'structure_lite_logo_align', array(

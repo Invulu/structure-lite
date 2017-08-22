@@ -2,12 +2,12 @@
 
 	Theme Name: Structure Lite
 	Theme URI: http://organicthemes.com/theme/structure-lite/
-	Description: Structure Lite is a minimally designed, multipurpose and responsive WordPress theme. The theme features options within the native WordPress customizer. Additionally, the theme is highly compatible with the Organic Customizer Widgets plugin that transforms the customizer into a page builder. Structure Lite is a perfect website solution for bloggers, writers, designers, magazines and any business that appreciates clean design and typography.
+	Description: Structure Lite is a responsive, multipurpose page-builder WordPress theme with a beautifully minimal design. The theme utilizes the Organic Customizer Widgets plugin to transform the WordPress customizer into a page builder. Use custom widgets within the customizer as content sections to display portfolios, testimonials, pricing tables, team members, featured content and more! Drag and drop the widgets into the desired order on any page. Structure Lite is a perfect website solution for bloggers, writers, designers, magazines and any business that appreciates clean design and typography.
 	Author: Organic Themes
 	Author URI: http://organicthemes.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.1.1
+	Version: 1.2
 	Text Domain: structure-lite
 	Domain Path: /languages/
 	Tags: one-column, two-columns, three-columns, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-images, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
@@ -56,10 +56,10 @@ body {
 	background-color: #ffffff;
 	color: #333333;
 	color: rgba(0, 0, 0, 0.8);
-	font-size: 1.1em;
+	font-size: 1em;
 	font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
 	font-weight: 300;
-	line-height: 1.8;
+	line-height: 1.6;
 	margin: 0px;
 	padding: 0px;
 }
@@ -152,14 +152,10 @@ ol ul li, ol ul ol ul li {
 blockquote {
 	font-family: 'Droid Serif', Georgia, Times, serif;
 	font-size: 1.6em;
-	font-style: italic;
 	line-height: 1.5;
 	margin: 24px 0px;
-	padding: 24px;
-	border-top: 1px solid #dddddd;
-	border-top: 1px solid rgba(0, 0, 0, 0.12);
-	border-bottom: 1px solid #dddddd;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+	padding: 12px 24px;
+	border-left: 3px solid #000000;
 }
 blockquote p {
 	margin: 0px;
@@ -304,26 +300,25 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 6px 0px;
 }
 h1 {
-	font-size: 3.2em;
+	font-size: 2.8em;
 	letter-spacing: -1px;
 }
 h2 {
-	font-size: 2.8em;
+	font-size: 2.4em;
 	letter-spacing: -0.6px;
 }
 h3 {
-	font-size: 2.4em;
+	font-size: 2em;
 	letter-spacing: -0.4px;
 }
 h4 {
-	font-size: 2em;
-}
-h5 {
 	font-size: 1.6em;
 }
+h5 {
+	font-size: 1.3em;
+}
 h6 {
-	font-size: 1.2em;
-	letter-spacing: 0.2px;
+	font-size: 1.1em;
 }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
 h1 a:link, h2 a:link, h3 a:link, h4 a:link, h5 a:link, h6 a:link,
@@ -340,7 +335,7 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 	border: none;
 }
 .headline {
-	font-size: 3.6em;
+	font-size: 2.8em;
 	letter-spacing: -1px;
 	margin: 0px;
 	padding: 0px 0px 18px 0px;
@@ -354,7 +349,7 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 	padding: 0px;
 }
 .middle .headline {
-	font-size: 3em;
+	font-size: 2.2em;
 }
 
 /************************************************
@@ -412,12 +407,11 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 }
 .site-title {
 	display: block;
-	font-family: 'Archivo Narrow';
-	font-size: 4.6em;
-	font-weight: 700;
+	font-family: 'Monoton';
+	font-size: 4em;
+	font-weight: 500;
 	line-height: 1.1;
-	text-transform: uppercase;
-	letter-spacing: -4px;
+	letter-spacing: -1px;
 	margin: 0px;
 	padding: 24px 0px 0px 0px;
 	word-wrap: break-word;
@@ -437,13 +431,16 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 	display: block;
 	color: #ffffff;
 	font-family: 'Roboto';
-	font-size: 3em;
+	font-size: 3.2em;
 	font-weight: 300;
 	text-align: center;
 	letter-spacing: -1px;
 	line-height: 1;
 	margin: 0px auto 0px;
 	padding: 24px;
+}
+.structure-lite-bg-light .site-description {
+	color: #000000;
 }
 
 /************************************************
@@ -759,7 +756,7 @@ div.menu ul li li.sfHover ul {
 .article > p:first-child,
 .article span + p {
 	color: #000000;
-	font-size: 1.4em;
+	font-size: 1.2em;
 	font-weight: 400;
 	line-height: 1.5;
 }
@@ -1026,8 +1023,13 @@ div.menu ul li li.sfHover ul {
 }
 .page-banner .headline {
 	color: #ffffff;
+	font-size: 3.2em;
+	font-weight: 300;
 	text-align: center;
 	margin: 0px;
+}
+.page-banner.structure-lite-bg-light .headline {
+	color: #000000;
 }
 .page-banner img {
 	margin-left: -9999px;
@@ -1737,6 +1739,7 @@ table tfoot {
 table thead th,
 table tfoot td {
 	border: none;
+	box-sizing: border-box;
 }
 table th {
 	background: #eeeeee;
@@ -1744,12 +1747,12 @@ table th {
 	font-size: 1.2em;
 	text-align: center;
 	margin: 0px;
-	padding: 8px 2px;
+	padding: 12px;
 	border: 1px solid #dddddd;
 	border: 1px solid rgba(0, 0, 0, 0.12);
 }
 table td {
-	padding: 5px 2px;
+	padding: 8px;
 	margin: 0px;
 	border: 1px solid #dddddd;
 	border: 1px solid rgba(0, 0, 0, 0.12);
@@ -1996,10 +1999,31 @@ a, button, .button, #submit, #searchsubmit {
 *	24.	Organic Widgets
 ************************************************/
 
-.organic-widgets-section.ocw-bg-dark a.button {
+.organic-ocw-container .organic-widget:first-child {
+	border-bottom: 4px solid #000000;
+}
+.organic-ocw-container .organic-widgets-group-container .organic-widget:first-child {
+	border-bottom: none;
+}
+.organic-ocw-container .organic-widget.organic-widget_widget_organic_widgets_hero_section:first-child .organic-widgets-hero-section.organic-widgets-full-height-section {
+	height: calc(100vh - 156px);
+}
+.organic-widgets-section.ocw-bg-dark a.button,
+.organic-widgets-section.ocw-bg-dark a.more-link {
 	color: rgba(255, 255, 255, 0.7);
 	border-color: rgba(255, 255, 255, 0.4);
 }
-.organic-widgets-section.ocw-bg-dark a.button:hover {
+.organic-widgets-section.ocw-bg-dark a.button:hover,
+.organic-widgets-section.ocw-bg-dark a.more-link:hover {
 	color: #000000;
+}
+.organic-widgets-section.ocw-bg-dark .organic-widgets-card a.button,
+.organic-widgets-section.ocw-bg-dark .organic-widgets-card a.more-link {
+	color: rgba(0, 0, 0, 0.4);
+	border-color: rgba(0, 0, 0, 0.4);
+}
+.organic-widgets-section.ocw-bg-dark .organic-widgets-card a.button:hover,
+.organic-widgets-section.ocw-bg-dark .organic-widgets-card a.more-link:hover {
+	color: #000000;
+	border-color: #000000;
 }

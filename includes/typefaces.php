@@ -28,8 +28,9 @@ function structure_lite_fonts_url() {
 	$droid_serif = _x( 'on', 'Droid Serif font: on or off', 'structure-lite' );
 	$cabin = _x( 'on', 'Cabin font: on or off', 'structure-lite' );
 	$lato = _x( 'on', 'Lato font: on or off', 'structure-lite' );
+	$monoton = _x( 'on', 'Monoton font: on or off', 'structure-lite' );
 
-	if ( 'off' !== $archivo_narrow || 'off' !== $raleway || 'off' !== $roboto || 'off' !== $open_sans || 'off' !== $montserrat || 'off' !== $droid_serif || 'off' !== $cabin || 'off' !== $lato ) {
+	if ( 'off' !== $archivo_narrow || 'off' !== $raleway || 'off' !== $roboto || 'off' !== $open_sans || 'off' !== $montserrat || 'off' !== $droid_serif || 'off' !== $cabin || 'off' !== $lato || 'off' !== $monoton ) {
 
 		$font_families = array();
 
@@ -63,6 +64,10 @@ function structure_lite_fonts_url() {
 
 		if ( 'off' !== $lato ) {
 			$font_families[] = 'Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic';
+		}
+
+		if ( 'off' !== $monoton ) {
+			$font_families[] = 'Monoton';
 		}
 
 		$query_args = array(

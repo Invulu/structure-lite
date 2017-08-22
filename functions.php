@@ -161,12 +161,13 @@ if ( ! function_exists( 'structure_lite_enqueue_scripts' ) ) {
 
 		// Resgister Scripts.
 		wp_register_script( 'jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '4.0' );
+		wp_register_script( 'jquery-background', get_template_directory_uri() . '/js/jquery.bgBrightness.js', array( 'jquery' ), '4.0' );
 		wp_register_script( 'superfish', get_template_directory_uri() . '/js/superfish.js', array( 'jquery', 'hoverIntent' ), '4.0' );
 
 		// Enqueue Scripts.
 		wp_enqueue_script( 'hoverIntent' );
 		wp_enqueue_script( 'structure-lite-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '4.0', true );
-		wp_enqueue_script( 'structure-lite-custom', get_template_directory_uri() . '/js/jquery.custom.js', array( 'jquery', 'superfish', 'jquery-fitvids' ), '4.0', true );
+		wp_enqueue_script( 'structure-lite-custom', get_template_directory_uri() . '/js/jquery.custom.js', array( 'jquery', 'jquery-background', 'superfish', 'jquery-fitvids' ), '4.0', true );
 
 		// Load single scripts only on single pages.
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -533,13 +534,13 @@ if ( ! function_exists( 'structure_lite_body_class' ) ) :
 		if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 			$classes[] = 'structure-has-logo'; }
 
-		if ( 'left' == get_theme_mod( 'structure_lite_logo_align', 'left' ) ) {
+		if ( 'left' == get_theme_mod( 'structure_lite_logo_align', 'center' ) ) {
 			$classes[] = 'structure-logo-left'; }
 
-		if ( 'center' == get_theme_mod( 'structure_lite_logo_align', 'left' ) ) {
+		if ( 'center' == get_theme_mod( 'structure_lite_logo_align', 'center' ) ) {
 			$classes[] = 'structure-logo-center'; }
 
-		if ( 'right' == get_theme_mod( 'structure_lite_logo_align', 'left' ) ) {
+		if ( 'right' == get_theme_mod( 'structure_lite_logo_align', 'center' ) ) {
 			$classes[] = 'structure-logo-right'; }
 
 		if ( 'blank' != get_theme_mod( 'header_textcolor' ) ) {

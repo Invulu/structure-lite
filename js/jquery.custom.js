@@ -6,6 +6,11 @@
 		$( 'html:first' ).removeClass( 'no-js' );
 	}
 
+	/* Check Element BG Brightness ---------------------*/
+	function checkBrightness() {
+		$('#custom-header, .page-banner').bgBrightness();
+	}
+
 	/* Superfish Menu ---------------------*/
 	function superfishSetup() {
 		$('.menu').superfish({
@@ -102,6 +107,7 @@
 
 	$( document )
 	.ready( removeNoJsClass )
+	.ready( checkBrightness )
 	.ready( superfishSetup )
 	.ready( superfishMobile )
 	.ready( modifyPosts )

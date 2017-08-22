@@ -69,20 +69,23 @@
 
 	body {
 		font-size: 1rem;
-		line-height: 1.9;
+		line-height: 1.7;
 	}
 	blockquote {
 		font-size: 1.4rem;
 	}
 	.site-title {
-		font-size: 4rem;
+		font-size: 3.6rem;
 	}
 	.site-description {
-		font-size: 2.4rem;
+		font-size: 2.2rem;
 	}
 	.headline,
+	.page-banner .headline {
+		font-size: 2.2rem;
+	}
 	.middle .headline {
-		font-size: 2.8rem;
+		font-size: 1.8rem;
 	}
 
 	/* Theme Tablet */
@@ -240,7 +243,7 @@
 		font-size: 4.0rem;
 	}
 	body, p {
-		font-size: 0.9rem;
+		font-size: 1.1rem;
 		line-height: 1.7;
 	}
 	blockquote {
@@ -255,18 +258,18 @@
 		font-size: 3rem;
 	}
 	.site-description {
-		font-size: 1.8rem;
+		font-size: 2rem;
 	}
 	.headline,
-	.middle .headline {
+	.page-banner .headline {
 		font-size: 2rem;
+	}
+	.middle .headline {
+		font-size: 1.6rem;
 	}
 
 	/* Theme Phone */
 
-	.site-title {
-		letter-spacing: -2px;
-	}
 	#custom-header {
 		background-size: cover;
 	}
