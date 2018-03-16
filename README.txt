@@ -1,6 +1,6 @@
 === Structure Lite ===
 
-Version: 1.2.1
+Version: 1.2.2
 Contributors: organicthemes, itsdavidmorgan
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
 License: GPLv2 or later
@@ -109,3 +109,8 @@ CHANGELOG v1.2:
 
 CHANGELOG v1.2.1:
 - Updates to admin notice
+
+CHANGELOG v1.2.2:
+- Removed force activation
+- Removed recommended Customize Posts plugin
+- Updated theme description
