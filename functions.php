@@ -243,6 +243,18 @@ if ( ! function_exists( 'structure_lite_custom_styles' ) ) {
 }
 add_action( 'wp_enqueue_scripts', 'structure_lite_custom_styles' );
 
+if ( ! function_exists( 'structure_lite_enqueue_admin_scripts' ) ) {
+
+	/** Function structure_lite_enqueue_admin_scripts */
+	function structure_lite_enqueue_admin_scripts( $hook ) {
+		if ( 'themes.php' !== $hook ) {
+			return;
+		}
+		wp_enqueue_script( 'structure-custom-admin', get_template_directory_uri() . '/js/jquery.custom.admin.js', array( 'jquery' ), '1.0', true );
+	}
+}
+add_action( 'admin_enqueue_scripts', 'structure_lite_enqueue_admin_scripts' );
+
 /*
 -------------------------------------------------------------------------------------------------------
 	Custom Logo
