@@ -1,6 +1,6 @@
 === Structure Lite ===
 
-Version: 1.2.3
+Version: 1.2.4
 Contributors: organicthemes, itsdavidmorgan
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
 License: GPLv2 or later
@@ -117,3 +117,9 @@ CHANGELOG v1.2.2:
 
 CHANGELOG v1.2.3:
 - Added upgrade option
+
+CHANGELOG v1.2.4:
+- Updated background brightness script
+- Updated OCW plugin name to Organic Builder Widgets
+- Added theme support submenu link
+- General cleanup

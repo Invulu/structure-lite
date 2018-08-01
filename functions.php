@@ -257,6 +257,19 @@ add_action( 'admin_enqueue_scripts', 'structure_lite_enqueue_admin_scripts' );
 
 /*
 -------------------------------------------------------------------------------------------------------
+	Admin Support Link
+-------------------------------------------------------------------------------------------------------
+*/
+
+function structure_lite_support_link() {
+	global $submenu;
+	$menu_link = esc_url( 'https://organicthemes.com/support/' );
+	$submenu['themes.php'][6] = array( 'Theme Support', 'manage_options', $menu_link, '', 1 );
+}
+add_action( 'admin_menu', 'structure_lite_support_link' );
+
+/*
+-------------------------------------------------------------------------------------------------------
 	Custom Logo
 -------------------------------------------------------------------------------------------------------
 */
