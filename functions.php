@@ -264,14 +264,14 @@ add_action( 'admin_enqueue_scripts', 'structure_lite_enqueue_admin_scripts' );
 function structure_lite_support_link() {
 	global $submenu;
 	$support_link = esc_url( 'https://organicthemes.com/support/' );
-	$submenu['themes.php'][6] = array( __( 'Theme Support', 'structure-lite' ), 'manage_options', $support_link );
+	$submenu['themes.php'][] = array( __( 'Theme Support', 'structure-lite' ), 'manage_options', $support_link );
 }
 add_action( 'admin_menu', 'structure_lite_support_link' );
 
 function structure_lite_upgrade_link() {
 	global $submenu;
 	$upgrade_link = esc_url( 'https://organicthemes.com/theme/structure-theme/' );
-	$submenu['themes.php'][7] = array( __( 'Theme Upgrade', 'structure-lite' ), 'manage_options', $upgrade_link );
+	$submenu['themes.php'][] = array( __( 'Theme Upgrade', 'structure-lite' ), 'manage_options', $upgrade_link );
 }
 add_action( 'admin_menu', 'structure_lite_upgrade_link' );
 
