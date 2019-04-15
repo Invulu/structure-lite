@@ -1,6 +1,6 @@
 === Structure Lite ===
 
-Version: 1.2.6
+Version: 1.2.7
 Contributors: organicthemes, itsdavidmorgan
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options
 License: GPLv2 or later
@@ -131,3 +131,7 @@ CHANGELOG v1.2.5:
 
 CHANGELOG v1.2.6:
 - Fixed issue of custom admin submenu link overwriting other links
+
+CHANGELOG v1.2.7:
+- Recommended plugins
+- Updated screenshot
